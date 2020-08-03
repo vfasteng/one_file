@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+</head>
+<body>
+    <script src="js/aframe/aframe-environment-component.min.js"></script>
+    <script src="js/aframe/aframe-htmlembed.min.js"></script>
+    <script src="js/aframe/aframe-physics-system.min.js"></script>
+    <script src="js/aframe/aframe-teleport-controls.min.js"></script>
+    <script src="js/aframe/aframe.min.js"></script>
+    <script src="js/aframe/ammo.wasm.js"></script>
+    <script src="js/aframe/sphere-collider.js"></script>
+
+    <a-scene environment="preset: contact; dressingAmount: 0; ground: flat; lightPosition: 19 19 19; shadow: true" inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+        <a-assets>
+            <a-asset-item id="g01" src="assets/fxx_Reduced.glb"></a-asset-item>
+            <a-asset-item id="g02" src="assets/fyy_Reduced.glb"></a-asset-item>
+            <a-asset-item id="g03" src="assets/fzz_Reduced.glb"></a-asset-item>
+
+        </a-assets>
+        <!--
+              <a-entity position="0 2 -3" >
+                <a-entity gltf-model="#g01" static-body="shape: box; mass: 0" position="0 0.379 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+                <a-entity gltf-model="#g02" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+
+                <a-entity gltf-model="#g03" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+              </a-entity>
+        -->
+    </a-scene>
+</body>
+</html>
