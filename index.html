@@ -1,27 +1,67 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.1.2/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+	
+	<script src="reaction_components/clickable.js"></script>
+	<script src="reaction_components/draggable.js"></script>
+	<script src="reaction_components/drag-droppable.js"></script>
+	<script src="reaction_components/hoverable.js"></script>
+	<script src="reaction_components/stretchable.js"></script>
+	<script src="reaction_components/droppable.js"></script>
+	<script src="reaction_components/grabbable.js"></script>
 
-<head>
-    <title>Basic Interactions - A-Frame</title>
-    <meta name="description" content="Interactions - A-Frame">
-    <script src="js/aframe-master.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-</head>
+	<script src="components/aframe-ammo-constraints.js"></script>
 
-<body>
-    <a-scene stats anti-alias>
-        <a-assets>
-            <img id="sky" src="img/sphere.jpg">
-			<a-asset-item id="r01" src="assets/models/glb/fxx_Reduced.glb"></a-asset-item>
-			<a-asset-item id="r02" src="assets/models/glb/fyy_Reduced.glb"></a-asset-item>
-			<a-asset-item id="r03" src="assets/models/glb/fzz_Reduced.glb"></a-asset-item>
-			
-        </a-assets>
-        <a-sky src="#sky"></a-sky>
-        <a-entity laser-controls="hand: right"></a-entity>
-        <a-entity oculus-go-controls x-button-listener></a-entity>
-        <a-entity laser-controls="hand: left"></a-entity>
-		<a-entity src="#r01" position="0 2 -3"></a-entity>
+    <script>
+      // forward mouse and touch events to the super-hands entity
+      AFRAME.registerComponent('capture-mouse', {
+        init: function () {
+          this.eventRepeater = this.eventRepeater.bind(this)
+          this.el.sceneEl.addEventListener('loaded', () => {
+            this.el.sceneEl.canvas.addEventListener('mousedown', this.eventRepeater)
+            this.el.sceneEl.canvas.addEventListener('mouseup', this.eventRepeater)
+            this.el.sceneEl.canvas.addEventListener('touchstart', this.eventRepeater)
+            this.el.sceneEl.canvas.addEventListener('touchmove', this.eventRepeater)
+            this.el.sceneEl.canvas.addEventListener('touchend', this.eventRepeater)
+          }, {once: true})
+        },
+        eventRepeater: function (evt) {
+          if (evt.type.startsWith('touch')) {
+            evt.preventDefault()
+            // avoid repeating touchmove because it interferes with look-controls
+            if (evt.type === 'touchmove') { return }
+          }
+          this.el.emit(evt.type, evt.detail)
+        }
+      })
+    </script>
+    <link rel="stylesheet" type="text/css" href="aframe.css">
+  </head>
+  <body>
+    <a-scene environment="preset: contact; dressingAmount: 0; ground: flat; lightPosition: 19 19 19; shadow: true" inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+	<a-assets>
+	  	<a-asset-item id="g01" src="fxx_Reduced.glb"></a-asset-item>
+        <a-asset-item id="g02" src="fyy_Reduced.glb"></a-asset-item>
+        <a-asset-item id="g03" src="fzz_Reduced.glb"></a-asset-item>
+		
+	  </a-assets>
+	
+	
+	  
+	  	<!--
+	  <a-entity position="0 2 -3" >
+	  	<a-entity gltf-model="#g01" static-body="shape: box; mass: 0" position="0 0.379 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+	    <a-entity gltf-model="#g02" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+    	<a-entity gltf-model="#g03" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+	  </a-entity>
+-->
     </a-scene>
-</body>
-
+  </body>
 </html>
