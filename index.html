@@ -51,15 +51,20 @@
     <a-scene environment="preset: contact; dressingAmount: 0; ground: flat; lightPosition: 19 19 19; shadow: true" inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
 	<a-assets>
 	  	<a-asset-item id="g01" src="fxx_Reduced.glb"></a-asset-item>
-        <a-asset-item id="g02" src="fyy_Reduced.glb"></a-asset-item>
-        <a-asset-item id="g03" src="fzz_Reduced.glb"></a-asset-item>
+        	<a-asset-item id="g02" src="fyy_Reduced.glb"></a-asset-item>
+        	<a-asset-item id="g03" src="fzz_Reduced.glb"></a-asset-item>
 		
 	  </a-assets>
 	
 	  <a-entity position="0 2 -3" >
 	  	<a-entity gltf-model="#g01" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
-	    <a-entity gltf-model="#g02" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
-    	<a-entity gltf-model="#g03" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+	    	<a-entity gltf-model="#g02" static-body="shape: box; mass: 0" position="0 0.379 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+    		<a-entity gltf-model="#g03" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+	  </a-entity>
+	    <a-entity position="-3 2 -3" >
+	  	<a-entity gltf-model="#g01" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+	    	<a-entity gltf-model="#g02" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
+    		<a-entity gltf-model="#g03" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1"></a-entity>
 	  </a-entity>
     </a-scene>
   </body>
