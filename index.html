@@ -163,18 +163,23 @@
   <body>
     <a-scene environment="preset: contact; dressingAmount: 0; ground: flat; lightPosition: 19 19 19; shadow: true" inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
 	<a-assets>
-	  	<a-asset-item id="g01" src="fxx_Reduced.glb"></a-asset-item>
-        	<a-asset-item id="g02" src="fyy_Reduced.glb"></a-asset-item>
-        	<a-asset-item id="g03" src="fzz_Reduced.glb"></a-asset-item>
-		<a-asset-item id="g04" src="UJBlockRed.glb"></a-asset-item>
-        	<a-asset-item id="g05" src="UJBlockBlue.glb"></a-asset-item>
-        	<a-asset-item id="g06" src="UJBlockGreen.glb"></a-asset-item>
-		<a-asset-item id="g07" src="inputshaft.glb"></a-asset-item>
-        	<a-asset-item id="g08" src="outputshaft.glb"></a-asset-item>
+	  	<a-asset-item id="g01" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fstub16.glb?v=1600563980159"></a-asset-item>
+        	<a-asset-item id="g02" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear48.glb?v=1600563993621"></a-asset-item>
+        	<a-asset-item id="g03" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear32.glb?v=1600564007441"></a-asset-item>
+		<a-asset-item id="g04" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fgear16.glb?v=1600564034432"></a-asset-item>
+        	<a-asset-item id="g05" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbboxx.glb?v=1601113544354"></a-asset-item>
+        	<a-asset-item id="g06" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2F3w.glb?v=1601138511595"></a-asset-item>
+		<a-asset-item id="g07" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fiin3speed.glb?v=1601200846073"></a-asset-item>
+        	<a-asset-item id="g08" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fout3speed.glb?v=1601200880607.glb"></a-asset-item>
         	<a-asset-item id="g09" src="casing.glb"></a-asset-item>
 		
 	  </a-assets>
-	
+		<a-entity src="#g01" static-body="shape: box; mass: 0" position="0 10 0" rotation="0 0 0" scale="1 1 1"></a-entity>
+	    	<a-entity src="#g02" static-body="shape: box; mass: 0" position="0 10 0" rotation="0 0 0" scale="1 1 1"></a-entity>
+    		<a-entity src="#g03" static-body="shape: box; mass: 0" position="0 10 0" rotation="0 0 0" scale="1 1 1"></a-entity>
+	    	
+	    
+	    
 	  <!--<a-entity position="0 2 -3" >
 	  	<a-entity gltf-model="#g07" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
 	    	<a-entity gltf-model="#g08" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
