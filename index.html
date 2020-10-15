@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
-    <script src="https://unpkg.com/super-hands/dist/super-hands.min.js"></script>
-    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.1.2/dist/aframe-physics-system.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
-    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
-	<script src="//unpkg.com/xterm@3.12.0/dist/xterm.js"></script>
-<script src="//unpkg.com/aframe-xterm-component@1.0.1/aframe-xterm-component.js"></script>
-<script src="//unpkg.com/xterm-js-shell@1.1.3/bundle.js"></script>
-<script src="https://ranger.mauve.moe/dat-xr-scene-ide//editor-terminal.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="js/aframe/aframe-environment-component.min.js"></script>
+    <script src="js/aframe/aframe-htmlembed.min.js"></script>
+    <script src="js/aframe/aframe-physics-system.min.js"></script>
+    <script src="js/aframe/aframe-teleport-controls.min.js"></script>
+    <script src="js/aframe/aframe.min.js"></script>
+    <script src="js/aframe/ammo.wasm.js"></script>
+    <script src="js/aframe/sphere-collider.js"></script>
+	
 	<script src="reaction_components/clickable.js"></script>
 	<script src="reaction_components/draggable.js"></script>
 	<script src="reaction_components/drag-droppable.js"></script>
@@ -19,9 +18,11 @@
 	<script src="reaction_components/stretchable.js"></script>
 	<script src="reaction_components/droppable.js"></script>
 	<script src="reaction_components/grabbable.js"></script>
-
-	<script src="components/aframe-ammo-constraints.js"></script>
-
+	
+	
+	
+    
+	
     <script>
       AFRAME.registerComponent('createConstraint', {
         // ...
@@ -174,33 +175,13 @@
         	<a-asset-item id="g09" src="https://cdn.glitch.com/2a3af8bb-e7b2-4e50-8ce2-68e3e8cf4538%2Fbg50pcd.glb?v=1601550147603"></a-asset-item>
 		
 	  </a-assets>
-	    
-	    
-	  	<a-entity gltf-model="#g09" static-body="shape: box; mass: 0" position="-5 5 -5" rotation="0 0 90" scale=".01 .01 .01"></a-entity>
-	    <a-entity gltf-model="#g09" static-body="shape: box; mass: 0" position="0 5 -5" rotation="0 0 90" scale=".01 .01 .01"></a-entity>
-    	<a-entity gltf-model="#g09" static-body="shape: box; mass: 0" position="5 5 -5" rotation="0 0 90" scale=".01 .01 .01"></a-entity>
-	  
-	    <!--
-		<a-entity src="#g01" static-body="shape: box; mass: 0" position="0 5 -6" rotation="0 0 0" scale=".01 .01 .01"></a-entity>
-	    	<a-entity src="#g02" static-body="shape: box; mass: 0" position="0 5 -4" rotation="0 0 0" scale=".01 .01 .01"></a-entity>
-    		<a-entity src="#g03" static-body="shape: box; mass: 0" position="0 5 -2" rotation="0 0 0" scale=".01 .01 .01"></a-entity>
-	    	
-	    
-	    
-	  <!--<a-entity position="0 2 -3" >
-	  	<a-entity gltf-model="#g07" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
-	    	<a-entity gltf-model="#g08" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
-    		<a-entity gltf-model="#g09" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
-	  </a-entity>--
-	    <a-entity position="-3 2 -3" >
-	  	<a-entity gltf-model="#g01" static-body="shape: box; mass: 0" position="0 0 0" rotation="0 0 90" scale="1 1 1">
-			<a-entity gltf-model="#g04" static-body="shape: box; mass: 0" position="0 0.5 0" rotation="0 0 90" scale="1 1 1"></a-entity>
-			<a-entity gltf-model="#g04" static-body="shape: box; mass: 0" position="0-0.50 0" rotation="0 0 90" scale="1 1 1"></a-entity>
-			<a-entity gltf-model="#g06" static-body="shape: box; mass: 0" position="0 0 -0.5" rotation="0 0 90" scale="1 1 1"></a-entity>
-			<a-entity gltf-model="#g06" static-body="shape: box; mass: 0" position="0 0 0.5" rotation="0 0 90" scale="1 1 1"></a-entity>
-
-		    </a-entity>
-	    </a-entity>-->
+              <a-entity position="0 2 -3" >
+                <a-sphere></a-sphere>
+	    </a-entity>
+        
     </a-scene>
-  </body>
+</body>
 </html>
+
+
+
